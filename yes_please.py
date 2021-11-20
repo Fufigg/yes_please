@@ -32,12 +32,10 @@ def toNormalStr(my_str):
     str16 = []
     for letter in my_str:
         if letter in ['a', 'а', 'o', 'о']:
-            print(letter)
             if letter == 'а' or letter == 'о':
                 str16.append(1)
             else:
                 str16.append(0)
-            print(str16)
         if len(str16) == 16:
             yield chr(int(''.join([str(num) for num in str16]), 2))
             str16 = []
