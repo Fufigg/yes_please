@@ -34,7 +34,6 @@ print(result)
 
 def toNormalStr(my_str):
     str16 = []
-    NormalStr = []
     for letter in my_str:
         if letter in ['a', 'а', 'o', 'о']:
             print(letter)
@@ -44,9 +43,8 @@ def toNormalStr(my_str):
                 str16.append(0)
             print(str16)
         if len(str16) == 16:
-            NormalStr.append(chr(int(''.join([str(num) for num in str16]), 2)))
+            yield chr(int(''.join([str(num) for num in str16]), 2))
             str16 = []
-    return ''.join(NormalStr)
 print(toNormalStr(result))
 
 
