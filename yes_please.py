@@ -1,7 +1,7 @@
 
 # ===== Внутренний функционал модуля =====
 
-def toDaPozaliysta(my_str):
+def yesPlease(my_str):
     for letter in my_str:
         bits = bin(ord(letter))[2:]
         my_list = bits.zfill(16)
@@ -89,7 +89,7 @@ def decrypt_file_to_string(input_file_name: str, show_process: bool = False) -> 
     """
     raise NotImplementedError()
 
-def decrypt_file_to_file(input_file_name: str, output_file_name: str, show_process: bool = False) -> bool
+def decrypt_file_to_file(input_file_name: str, output_file_name: str, show_process: bool = False) -> bool:
     """
     Конвертирует зашифрованный файл в незашифрованный
     :param input_file_name: входной зашифрованный файл
