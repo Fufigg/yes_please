@@ -26,11 +26,7 @@ def toDaPozaliysta(my_str):
                 letter_four = "a" # английская
             daPozaluista = "Д" + letter_one +", п" + letter_two + "ж" + letter_three + "луйст" + letter_four + ". "
             yield daPozaluista
-s = input()
-result = ""
-for element in toDaPozaliysta(s):
-  result += element
-print(result)
+
 
 def toNormalStr(my_str):
     str16 = []
@@ -45,7 +41,7 @@ def toNormalStr(my_str):
         if len(str16) == 16:
             yield chr(int(''.join([str(num) for num in str16]), 2))
             str16 = []
-print(toNormalStr(result))
+
 
 
 
@@ -68,7 +64,11 @@ def encrypt_string_to_string(input_string: str) -> str:
     :param input_string: исходная строка
     :return: зашифрованная строка
     """
-    raise NotImplementedError()
+    s = input_string
+    result = ""
+    for element in yesPlease(s):
+        result += element
+    return result
 
 def encrypt_string_to_file(input_string: str, output_file_name: str, show_process: bool = False) -> bool:
     """
@@ -105,4 +105,8 @@ def decrypt_string_to_string(input_string: str) -> str:
     :param input_string: зашифрованная строка
     :return: исходная строка
     """
-    raise NotImplementedError()
+    s = input_string
+    result = ""
+    for element in toNormalStr(s):
+        result += element
+    return result
