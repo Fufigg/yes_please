@@ -79,8 +79,13 @@ def encrypt_string_to_file(input_string: str, output_file_name: str, show_proces
             generator = yesPlease(input_string)
             if show_process:
                 generator = tqdm(generator)
+            i = 1
             for element in generator:
-                f.write(element)
+                if i % 4 == 0:
+                    f.write(element + '\n')
+                else:
+                    f.write(element)
+                i += 1
         return True
     except:
         return False
