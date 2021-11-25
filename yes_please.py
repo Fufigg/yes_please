@@ -97,7 +97,13 @@ def decrypt_file_to_string(input_file_name: str, show_process: bool = False) -> 
     :param show_process: флаг отображения процесса
     :return: исходная строка
     """
-    raise NotImplementedError()
+    with open(input_file_name, 'r') as f:
+        result = ""
+        for i in f:
+            for element in toNormalStr(i):
+                result += element
+    return result
+
 
 def decrypt_file_to_file(input_file_name: str, output_file_name: str, show_process: bool = False) -> bool:
     """
