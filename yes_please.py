@@ -1,5 +1,6 @@
 
 # ===== Внутренний функционал модуля =====
+from tqdm import tqdm
 
 def yesPlease(my_str):
     for letter in my_str:
@@ -48,10 +49,7 @@ def toNormalStr(my_str):
 # ===== Внешний интерфейс модуля =====
 
 # TODO:
-#  - Доделать и проверить функционал работу генераторов для конвертации строки в дапожалуйста и наоборот
 #  - Запилить интерфейс :D
-#   - Для отображения процесса будем использовать модуль из 4 букв, название которого я не помню
-#   - Внутреннюю кухню модуля делаем приватной (загуглить про это, потом объяснить тоше что делает символ _ в начале функции)
 #  - Заебашить Unit-тесты
 #  - Залить проект на гитхаб (потихоньку собираем портфолию ахаха)
 #                                                                                                                 <3  <3
@@ -76,7 +74,16 @@ def encrypt_string_to_file(input_string: str, output_file_name: str, show_proces
     :param show_process: флаг отображения процесса (я подскажу как)
     :return: успешно ли произошло сохранение файла
     """
-    raise NotImplementedError()
+    try:
+        with open(output_file_name, 'w') as f:
+            generator = yesPlease(input_string)
+            if show_process:
+                generator = tqdm(generator)
+            for element in generator:
+                f.write(element)
+        return True
+    except:
+        return False
 
 def decrypt_file_to_string(input_file_name: str, show_process: bool = False) -> str:
     """
