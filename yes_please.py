@@ -60,9 +60,8 @@ def encrypt_string_to_string(input_string: str) -> str:
     :param input_string: исходная строка
     :return: зашифрованная строка
     """
-    s = input_string
     result = ""
-    for element in yesPlease(s):
+    for element in yesPlease(input_string):
         result += element
     return result
 
