@@ -120,8 +120,8 @@ def decrypt_string_to_string(input_string: str) -> str:
     :param input_string: зашифрованная строка
     :return: исходная строка
     """
-    s = input_string
+
     result = ""
-    for element in toNormalStr(s):
+    for element in toNormalStr(input_string):
         result += element
     return result
